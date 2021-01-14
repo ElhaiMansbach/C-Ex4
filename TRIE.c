@@ -172,7 +172,7 @@ void print_words(trie* root) {
     root->word[p++]=root->current->letter;
     if (root->current->is_word) { //End of the word
         root->word[p]='\0';
-        printf("%s\t%ld\n",root->word,root->current->count);
+        printf("%s %ld\n",root->word,root->current->count);
     }
     if (root->current->has_kids) {
         for(i=0; i<NUM_LETTERS; ++i) {
