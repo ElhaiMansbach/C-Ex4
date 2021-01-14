@@ -141,14 +141,14 @@ void print_words_reverse(trie* root) {
     } else {
         if (root->current->is_word) { //the end of a word
             root->word[p]='\0';
-            printf("%s\t%ld\n",root->word,root->current->count);
+            printf("%s %ld\n",root->word,root->current->count);
         }
         --p;
         return;
     }
     if (root->current->is_word) {
         root->word[p]='\0';
-        printf("%s\t%ld\n",root->word,root->current->count);
+        printf("%s %ld\n",root->word,root->current->count);
     }
     --p;
 }
@@ -216,7 +216,7 @@ void free_trie(trie* t) {
 void usage(char* program_name,char* message) {
     //Print errors
     printf("\n%s\n\n",message);
-    printf("USAGE:\n\t%s: %s\n\n",program_name,message);
+    printf("USAGE:\n %s: %s\n\n",program_name,message);
     exit(1);
 }
 boolean should_reverse(int argc, char* argv[]) {
